@@ -1,0 +1,140 @@
+- Experiments result:
+
+1. For generating all the keys
+I have done 5 experitments, the average time to generating all the keys is:
+	(1.36+1.87+4.81+3.97+2.53)/5 = 2.908 seconds
+
+2. For encryption and decrytion a file with the size of 2028 bytes
+Four experiments have been done. The average time to encrypt the specified file is:
+	(5.68+6.01+6.13+5.5)/4 = 5.83 seconds
+
+The average time to decrypt it is:
+	(3.07+2.97+3.06+2.68)/4 = 2.945 seconds
+
+3. For authentication, Alice decrypts the file she wants to send to Bob first, then encrypt it. After receives it, Bob decrypt it first with his secret key, then encrypt it with Alice's public key.
+The average time needed by Alice is:
+	(14.91+15.61+16.12+14.49)/4 = 15.28 seconds
+
+The average time needed by Bob is:
+	(11.67+12.32+12.45+11.19)/4 = 11.9075 seconds
+
+* Note, the experiments are done with different seeds to generate the keys.
+
+
+-------------------------------------------------------------------------
+Experiments' data:
+
+1. generating all the keys
+time rsa_key 3:
+  real    0m1.466s
+  user    0m1.360s
+  sys     0m0.000s
+
+time rsa_key 1975:
+real    0m2.073s
+user    0m1.870s
+sys     0m0.000s 
+
+time rsa_key 23:
+  real    0m5.073s
+  user    0m4.810s
+  sys     0m0.000s
+
+time rsa_key 2004:
+real    0m4.158s
+user    0m3.970s
+sys     0m0.000s
+
+time rsa_key 53426:
+real    0m2.726s
+user    0m2.490s
+sys     0m0.040s
+
+2. encrypting & decryption a file with size of 2028 bytes
+time rsa_en KeyN.txt KeyE.txt zzz.c z.e
+time rsa_de KeyN.txt KeyD.txt z.e z.d
+
+(rsa_key 53426)
+encryption:
+real    0m5.765s
+user    0m5.680s
+sys     0m0.000s
+
+decryption:
+real    0m3.175s
+user    0m3.070s
+sys     0m0.000s
+
+(rsa_key 1972)
+real    0m6.084s
+user    0m6.000s
+sys     0m0.010s
+
+real    0m6.262s
+user    0m2.950s
+sys     0m0.020s
+
+(rsa_key 940)
+real    0m6.207s
+user    0m6.130s
+sys     0m0.000s
+
+real    0m6.665s
+user    0m3.050s
+sys     0m0.010s
+
+(rsa_key 1013)
+real    0m5.998s
+user    0m5.490s
+sys     0m0.010s
+
+real    0m2.757s
+user    0m2.640s
+sys     0m0.040s
+
+
+3. authentication
+Message from Alice (A) to Bob (B):
+r1 = rsa_en A_N.txt A_D.txt zzz.c z.a
+r2 = rsa_en B_N.txt B_E.txt z.a z.e
+
+r3 = rsa_de B_N.txt B_D.txt z.e z.b
+r4 = rsa_de A_N.txt A_E.txt z.b z.d
+
+(Seeds 940 & 1013)	The smaller seed generates keys for alice, the bigger one for Bob
+For r1 and r2
+real    0m15.202s
+user    0m14.510s
+sys     0m0.040s
+
+For r3 and r4
+real    0m12.797s
+user    0m11.670s
+sys     0m0.000s
+
+(Seeds 940 & 1972)
+real    0m15.972s
+user    0m15.590s
+sys     0m0.020s
+
+real    0m12.942s
+user    0m12.310s
+sys     0m0.010s
+
+(Seeds 1972 & 53426)
+real    0m16.314s
+user    0m15.920s
+sys     0m0.020s
+
+real    0m12.833s
+user    0m12.450s
+sys     0m0.000s
+
+(Seeds 4821 & 9053)
+real    0m14.749s
+user    0m14.480s
+sys     0m0.010s
+
+real    0m11.509s
+user    0m11.190s
+sys     0m0.000s
