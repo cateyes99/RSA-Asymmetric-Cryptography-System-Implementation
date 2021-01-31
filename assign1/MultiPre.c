@@ -138,8 +138,8 @@ int	main( void)
 	printf( "c = %lld\n", ((long long)c[5]*r*r*r*r*r +
 		(long long)c[4]*r*r*r*r + c[3]*r*r*r + c[2]*r*r + c[1]*r + c[0]));
 
-	printf( "a[ ]:"); PrintIntArray( a, 3);
-	printf( "b[ ]:"); PrintIntArray( b, 3);
+	printf( "a[]:"); PrintIntArray( a, 3);
+	printf( "b[]:"); PrintIntArray( b, 3);
 	printf( "a = %lld\n", lla = a[2]*r*r + a[1]*r + a[0]);
 	printf( "b = %lld\n", llb = b[2]*r*r + b[1]*r + b[0]);
 	printf( "a*b = %lld\n", lla*llb);
@@ -153,8 +153,8 @@ int	main( void)
 	a[0] = 13; a[1] = 15; a[2] = 16;
 	InitArray( b, 0, 0, 2*n-1);
 	InitArray( d, 0, 0, 2*n-1);
-	printf( "c[ ]:"); PrintIntArray( c, 2*n);
-	printf( "a[ ]:"); PrintIntArray( a, n);
+	printf( "c[]:"); PrintIntArray( c, 2*n);
+	printf( "a[]:"); PrintIntArray( a, n);
 	printf( "IntArrayValue( ): c = %lld\n", llc=IntArrayValue( c, r, 2*n));
 	printf( "IntArrayValue( ): a = %lld\n", lla=IntArrayValue( a, r, n));
 	printf( "llc / lla = %lld	llc %% lla = %lld\n", llc/lla, llc%lla);
@@ -163,9 +163,9 @@ int	main( void)
 	jj = divide1( c, a, b, 2*n, n);
 	printf( "After divide( ) ...\n");
 	printf( "The counter for remainder: %d\n", jj);
-	printf( "a[ ]:"); PrintIntArray( a, n);
-	printf( "b[ ]:"); PrintIntArray( b, 2*n);
-	printf( "c[ ]:"); PrintIntArray( c, 2*n);
+	printf( "a[]:"); PrintIntArray( a, n);
+	printf( "b[]:"); PrintIntArray( b, 2*n);
+	printf( "c[]:"); PrintIntArray( c, 2*n);
 	printf( "IntArrayValue( ): a = %lld\n", IntArrayValue( a, r, n));
 	printf( "IntArrayValue( ): b = %lld\n", IntArrayValue( b, r, 2*n));
 	printf( "IntArrayValue( ): c = %lld\n", IntArrayValue( c, r, 2*n));
@@ -191,10 +191,10 @@ exit( 0);
 //	divide( c, a, b, 2*n, n);
 	divide1( c, d, b, a, 2*n, n);
 	printf( "1. After divide( ) ...\n");
-	printf( "a[ ]:"); PrintIntArray( a, n);
-	printf( "b[ ]:"); PrintIntArray( b, 2*n);
-	printf( "c[ ]:"); PrintIntArray( c, 2*n);
-	printf( "d[ ]:"); PrintIntArray( d, 2*n);
+	printf( "a[]:"); PrintIntArray( a, n);
+	printf( "b[]:"); PrintIntArray( b, 2*n);
+	printf( "c[]:"); PrintIntArray( c, 2*n);
+	printf( "d[]:"); PrintIntArray( d, 2*n);
 	printf( "IntArrayValue( ): a = %lld\n", IntArrayValue( a, r, n));
 	printf( "IntArrayValue( ): b = %lld\n", IntArrayValue( b, r, 2*n));
 	printf( "IntArrayValue( ): c = %lld\n", IntArrayValue( c, r, 2*n));

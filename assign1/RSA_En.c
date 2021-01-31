@@ -9,7 +9,7 @@ int	main( int argc, char ** argv);
 int	main( int argc, char ** argv)
 {
 	FILE	*FClear, *FCipher;
-	int	ii;
+	int	i;
 
 	if (argc != 5)
 	{
@@ -19,7 +19,7 @@ int	main( int argc, char ** argv)
 
 /*
 	printf( "Continue to encrypt? [y/n]\n");
-	if ((ii = fgetc( stdin)) != 'y' && ii != 'Y')
+	if ((i = fgetc( stdin)) != 'y' && i != 'Y')
 		return 1;
  */
 
@@ -28,9 +28,9 @@ int	main( int argc, char ** argv)
 	printf( "\nRetrieving Key N from [%s] ...\n", argv[1]);
 	RetrieveKey( N, 2*n, argv[1]);
 	printf( "N (PxQ) is:"); PrintIntArray( N, 2*n+1);
-	printf( "N's effective length (NLen) is: %d elements\n", \
-		NLen = ArrayValueLen( N, 0, 2*n));
-	if (NLen <= 1)
+	printf( "N's effective length (NLength) is: %d elements\n", \
+		NLength = ArrayValueLen( N, 0, 2*n));
+	if (NLength <= 1)
 	{
 		printf( "N's effective length is too short to encipher!\n"
 			"Please use another seed to generate new P/Q\n");
