@@ -719,7 +719,7 @@ void	RetrieveKey( int Key[], int length, char * KeyFile)
 	char	str[50], *pch, ch;
 	int	end = 0, i;
 
-	if ((fp = fopen( KeyFile, "Radix")) == NULL)
+	if ((fp = fopen( KeyFile, "r")) == NULL)
 	{
 		printf( "ERROR: [%s] cannot be opened!\n", KeyFile);
 		exit( 1);
